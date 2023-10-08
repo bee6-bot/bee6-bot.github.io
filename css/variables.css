@@ -1,0 +1,122 @@
+@media (prefers-color-scheme: dark), (prefers-color-scheme: no-preference) {
+    :root {
+        --background: #222222;
+        --background-alt: #313131;
+        --text-color: #ffffff;
+        --accent-color: #ff7043;
+
+        /* Dark theme colors */
+        --pri-color: #3498db;
+        --sec-color: #27ae60;
+        --ter-color: #e74c3c;
+
+        /* Transparent colors */
+        --transparent-background: rgba(0, 0, 0, 0.5);
+        --transparent-text: rgba(255, 255, 255, 0.5);
+        --transparent-accent: rgba(255, 112, 67, 0.5);
+        --transparent-pri: rgba(52, 152, 219, 0.5);
+        --transparent-sec: rgba(39, 174, 96, 0.5);
+        --transparent-ter: rgba(231, 76, 60, 0.5);
+
+        /* Action colors */
+        --danger-color: #ea3624;
+        --success-color: #27ae60;
+        --warning-color: #f39c12;
+        --info-color: #3498db;
+
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --background: #ffffff;
+        --background-alt: #f5f5f5;
+        --text-color: #333333;
+        --accent-color: #007BFF;
+
+        /* Light theme colors */
+        --pri-color: #3498db;
+        --sec-color: #27ae60;
+        --ter-color: #e74c3c;
+
+        /* Transparent colors */
+        --transparent-background: rgba(0, 0, 0, 0.5);
+        --transparent-text: rgba(0, 0, 0, 0.5);
+        --transparent-accent: rgba(255, 112, 67, 0.5);
+        --transparent-pri: rgba(52, 152, 219, 0.5);
+        --transparent-sec: rgba(39, 174, 96, 0.5);
+        --transparent-ter: rgba(231, 76, 60, 0.5);
+
+        /* Action colors */
+        --danger-color: #ea3624;
+        --success-color: #27ae60;
+        --warning-color: #f39c12;
+        --info-color: #3498db;
+    }
+}
+
+
+/*<div class="colour">*/
+/*<div class="colour__box" style="background-color: #7289DA"></div>*/
+/*<div class="colour__name">Primary</div>*/
+/*<div class="colour__hex">#7289DA</div>*/
+/*</div>*/
+
+.colours {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-radius: 1em;
+}
+
+.colour {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px 20px;
+    gap: 10px;
+    border-radius: 1em;
+    background-color: var(--background-alt);
+    cursor: default;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    .colour__box {
+        width: 32px;
+        aspect-ratio: 1;
+        border-radius: 1em;
+        box-shadow: 0 0 8px var(--transparent-background);
+    }
+
+    .colour__details {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .colour__name {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .colour__hex {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--transparent-text);
+        opacity: 0.75;
+
+        &:before {
+            content: "#";
+        }
+    }
+
+    &:hover {
+        background-color: var(--background);
+        box-shadow: 0 0 8px var(--transparent-background);
+    }
+
+
+
+}
