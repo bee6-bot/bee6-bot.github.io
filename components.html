@@ -27,6 +27,7 @@
 
     <!-- JS -->
     <script src="js/main.js"></script>
+    <script src="https://unpkg.com/wc-discord-message@^2.0.0/dist/wc-discord-message/wc-discord-message.js"></script>
 
 </head>
 <body>
@@ -237,6 +238,58 @@
             <option value="option1">Option 1</option>
             <option value="option2">Option 2</option>
         </select>
+    </section>
+
+    <section id="discord-interface">
+
+        <h2>Discord Interface</h2>
+        <p>We use <a href="https://github.com/Danktuary/wc-discord-message">wc-discord-message</a> for this purpose.</p>
+        <p>NOTE: We are likely to create our own fork of this project in the future with up to date features,
+            such as markdown support.</p>
+
+        <h3>Messages</h3>
+
+        <discord-messages>
+            <discord-message author="BEE6 Beta" avatar="img/bee6.png">
+                <script>
+                    this.timestamp = new Date();
+                </script>
+                Hey, I'm a message!
+            </discord-message>
+
+            <discord-message author="User" avatar="https://cataas.com/cat/gif?width=100&height=100">
+                <script>
+                    this.timestamp = new Date();
+                </script>
+                Hey, I'm a message as well, but <discord-mention>mentioning</discord-mention> someone!
+            </discord-message>
+        </discord-messages>
+
+        <h3>Embeds</h3>
+
+        <discord-messages>
+            <discord-message author="BEE6 Beta" avatar="img/bee6.png">
+                I am a message with an embed!
+                <discord-embed slot="embeds" color="#0099ff">
+                    Embed Title
+
+                    <discord-embed-fields slot="fields">
+                        <discord-embed-field field-title="Field 1" inline>
+                            Some text
+                        </discord-embed-field>
+                        <discord-embed-field field-title="Field 2" inline>
+                            Some more text
+                        </discord-embed-field>
+                    </discord-embed-fields>
+
+                    <discord-embed-footer slot="footer">
+                        Footer text
+                    </discord-embed-footer>
+
+                </discord-embed>
+            </discord-message>
+        </discord-messages>
+
     </section>
 
 </main>
