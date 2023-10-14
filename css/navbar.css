@@ -6,6 +6,7 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     padding: 0 20px;
     width: 100%;
+    max-width: 100vw;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -25,7 +26,6 @@
     & h1 {
         margin: 0;
     }
-
 }
 
 .navbar__logo img {
@@ -143,7 +143,7 @@
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 100dvw;
     height: 60px;
     background-color: var(--transparent-background);
     backdrop-filter: blur(8px);
@@ -256,7 +256,7 @@
 
 @media (max-width: 768px) {
     .navbar {
-        transform: translateY(-100%);
+        display: none;
     }
 
     .bottom__bar__logo {
