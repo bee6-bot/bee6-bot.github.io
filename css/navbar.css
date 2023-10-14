@@ -10,7 +10,6 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    transition: all 0.3s ease-in-out;
 }
 
 .navbar__logo {
@@ -157,7 +156,7 @@
     padding: 0 0.5em;
 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
 
     & .bottom__bar__logo {
 
