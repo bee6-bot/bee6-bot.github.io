@@ -9,6 +9,7 @@
     position: sticky;
     top: 0;
     z-index: 100;
+    transition: all 0.3s ease-in-out;
 }
 
 .navbar__logo {
@@ -111,24 +112,25 @@
 }
 
 
-@media (max-width: 768px) {
-    .navbar__links ul {
-        display: none;
-    }
+/* Removed in favor of the new bottom bar */
+/*@media (max-width: 768px) {*/
+/*    .navbar__links ul {*/
+/*        display: none;*/
+/*    }*/
 
-    .navbar__button:nth-child(3) {
-        display: none;
-    }
+/*    .navbar__button:nth-child(3) {*/
+/*        display: none;*/
+/*    }*/
 
-    .dropdown-menu {
-        display: block;
-        cursor: pointer;
-    }
+/*    .dropdown-menu {*/
+/*        display: block;*/
+/*        cursor: pointer;*/
+/*    }*/
 
-    .dropdown-content {
-        display: none;
-    }
-}
+/*    .dropdown-content {*/
+/*        display: none;*/
+/*    }*/
+/*}*/
 
 
 
@@ -155,6 +157,7 @@
     padding: 0 0.5em;
 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
 
     & .bottom__bar__logo {
 
@@ -247,13 +250,13 @@
 
 @media (min-width: 768px) {
     .bottom__bar {
-        display: none;
+        bottom: -60px;
     }
 }
 
 @media (max-width: 768px) {
     .navbar {
-        display: none;
+        transform: translateY(-100%);
     }
 
     .bottom__bar__logo {
