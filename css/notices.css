@@ -1,0 +1,76 @@
+/*
+<div class="notice info">
+    <div class="notice__bar"></div>
+    <div class="notice__text">
+        <h4><i class="nf nf-md-information"></i> Info</h4>
+        <p>This is an info notice.</p>
+    </div>
+</div>
+ */
+
+.notice {
+
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: auto;
+
+    border-radius: 0.5em;
+    background-color: var(--background-alt);
+    padding: 1em;
+    margin-bottom: 1em;
+
+    .notice__bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0.5em;
+        height: 100%;
+        border-radius: 0.5em 0 0 0.5em;
+    }
+
+    .notice__text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 100%;
+        height: auto;
+        padding: 0 0 0 0.25em;
+
+        & h4 {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            text-transform: uppercase;
+            gap: 0.2em;
+        }
+
+        & p {
+            margin-top: 0.5em;
+        }
+
+    }
+
+    &.info .notice__bar {
+        background-color: var(--info-color);
+    }
+
+    &.success .notice__bar {
+        background-color: var(--success-color);
+    }
+
+    &.warning .notice__bar {
+        background-color: var(--warning-color);
+    }
+
+    &.danger .notice__bar {
+        background-color: var(--danger-color);
+    }
+
+
+}

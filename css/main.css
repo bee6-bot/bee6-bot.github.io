@@ -1,7 +1,9 @@
+@import "https://www.nerdfonts.com/assets/css/webfont.css";
 @import "navbar.css";
 @import "variables.css";
 @import "buttons.css";
 @import "inputs.css";
+@import "notices.css";
 
 * {
     box-sizing: border-box;

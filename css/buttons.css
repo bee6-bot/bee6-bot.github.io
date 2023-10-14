@@ -1,7 +1,6 @@
 button, .button {
     cursor: pointer;
     border: none;
-    outline: none;
     background-color: var(--accent-color);
     color: var(--text-color);
     padding: 10px 20px;
@@ -42,7 +41,7 @@ button, .button {
         background-color: transparent;
         border: 2px solid var(--ter-color);
 
-        &:hover {
+        &:hover, &:focus {
             border: 2px solid transparent;
             background-color: var(--ter-color);
             box-shadow: 0 2px 4px var(--transparent-ter),

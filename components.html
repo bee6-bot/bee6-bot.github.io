@@ -23,17 +23,15 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/normalize.css">
 
     <!-- JS -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
     <script src="https://unpkg.com/wc-discord-message@^2.0.0/dist/wc-discord-message/wc-discord-message.js"></script>
 
 </head>
 <body>
 
 <nav class="navbar">
-
     <div class="navbar__logo">
         <a href="index.html"><img src="img/bee6.png" alt="BEE6 Logo"></a>
         <h1>BEE6</h1>
@@ -43,7 +41,6 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="commands.html">Commands</a></li>
-            <li><a href="invite.html">Invite</a></li>
             <li><a href="support.html">Support</a></li>
         </ul>
     </div>
@@ -52,7 +49,49 @@
         <a href="https://discord.com/oauth2/authorize?client_id=738788356506767204&scope=bot&permissions=8">Invite</a>
     </div>
 
+    <button class="dropdown-menu" onclick="toggleDropdown()">☰</button>
+    <div class="dropdown-content">
+        <a href="index.html">Home</a>
+        <a href="commands.html">Commands</a>
+        <a href="support.html">Support</a>
+        <div class="navbar__button">
+            <a href="https://discord.com/oauth2/authorize?client_id=738788356506767204&scope=bot&permissions=8">Invite</a>
+        </div>
+    </div>
 </nav>
+
+<div class="bottom__bar">
+
+    <!-- Test -->
+
+    <div class="bottom__bar__logo">
+        <a href="index.html"><img src="img/bee6.png" alt="BEE6 Logo"></a>
+        <h1>BEE6</h1>
+    </div>
+
+    <a class="bottom__bar__link" href="index.html">
+        <i class="nf nf-md-home"></i>
+        <span>Home</span>
+    </a>
+
+    <a class="bottom__bar__link" href="commands.html">
+        <i class="nf nf-md-slash_forward_box"></i>
+        <span>Commands</span>
+    </a>
+
+    <a class="bottom__bar__link" href="components.html">
+        <i class="nf nf-md-library_shelves"></i>
+        <span>Components</span>
+    </a>
+
+
+    <a class="bottom__bar__link" href="https://discord.com/oauth2/authorize?client_id=738788356506767204&scope=bot&permissions=8">
+        <i class="nf nf-md-robot_happy"></i>
+        <span>Invite BEE6</span>
+    </a>
+
+
+</div>
 
 <main>
 
@@ -240,6 +279,47 @@
         </select>
     </section>
 
+    <section id="notes">
+
+        <h2>Notices</h2>
+
+        <h3>Info</h3>
+        <div class="notice info">
+            <div class="notice__bar"></div>
+            <div class="notice__text">
+                <h4><i class="nf nf-md-information"></i>Info</h4>
+                <p>This is an information notice.</p>
+
+            </div>
+        </div>
+
+        <div class="notice success">
+            <div class="notice__bar"></div>
+            <div class="notice__text">
+                <h4><i class="nf nf-md-information"></i>Success</h4>
+                <p>This is a success notice.</p>
+            </div>
+        </div>
+
+        <div class="notice warning">
+            <div class="notice__bar"></div>
+            <div class="notice__text">
+                <h4><i class="nf nf-md-information"></i>Warning</h4>
+                <p>This is a warning notice.</p>
+            </div>
+        </div>
+
+        <div class="notice danger">
+            <div class="notice__bar"></div>
+            <div class="notice__text">
+                <h4><i class="nf nf-md-information"></i>Danger</h4>
+                <p>This is a danger notice.</p>
+            </div>
+        </div>
+
+
+    </section>
+
     <section id="discord-interface">
 
         <h2>Discord Interface</h2>
@@ -250,25 +330,20 @@
         <h3>Messages</h3>
 
         <discord-messages>
-            <discord-message author="BEE6 Beta" avatar="img/bee6.png">
-                <script>
-                    this.timestamp = new Date();
-                </script>
+            <discord-message author="BEE6 Beta" avatar="img/bee6.png" timestamp="2020-01-01T00:00:00.000Z" bot>
                 Hey, I'm a message!
+
             </discord-message>
 
-            <discord-message author="User" avatar="https://cataas.com/cat/gif?width=100&height=100">
-                <script>
-                    this.timestamp = new Date();
-                </script>
-                Hey, I'm a message as well, but <discord-mention>mentioning</discord-mention> someone!
+            <discord-message author="A Person" avatar="https://cataas.com/cat/gif?width=100&height=100">
+                I'm a message as well, but <discord-mention>mentioning</discord-mention> someone!
             </discord-message>
         </discord-messages>
 
         <h3>Embeds</h3>
 
         <discord-messages>
-            <discord-message author="BEE6 Beta" avatar="img/bee6.png">
+            <discord-message author="BEE6 Beta" avatar="img/bee6.png" bot>
                 I am a message with an embed!
                 <discord-embed slot="embeds" color="#0099ff">
                     Embed Title
@@ -293,6 +368,18 @@
     </section>
 
 </main>
+
+<script defer>
+
+    const date = new Date();
+    const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
+
+    const messages = document.querySelectorAll('discord-message');
+    messages.forEach(message => {
+        message.setAttribute('timestamp', date.toLocaleDateString(undefined, options));
+    });
+
+</script>
 
 </body>
 </html>
