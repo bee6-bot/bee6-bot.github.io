@@ -289,20 +289,20 @@
         <h3>Messages</h3>
 
         <discord-messages>
-            <discord-message author="BEE6 Beta" avatar="img/bee6.png" timestamp="2020-01-01T00:00:00.000Z">
+            <discord-message author="BEE6 Beta" avatar="img/bee6.png" timestamp="2020-01-01T00:00:00.000Z" bot>
                 Hey, I'm a message!
 
             </discord-message>
 
             <discord-message author="A Person" avatar="https://cataas.com/cat/gif?width=100&height=100">
-                Hey, I'm a message as well, but <discord-mention>mentioning</discord-mention> someone!
+                I'm a message as well, but <discord-mention>mentioning</discord-mention> someone!
             </discord-message>
         </discord-messages>
 
         <h3>Embeds</h3>
 
         <discord-messages>
-            <discord-message author="BEE6 Beta" avatar="img/bee6.png">
+            <discord-message author="BEE6 Beta" avatar="img/bee6.png" bot>
                 I am a message with an embed!
                 <discord-embed slot="embeds" color="#0099ff">
                     Embed Title
@@ -333,7 +333,6 @@
     const date = new Date();
     const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
 
-    // Set the timestamp of all messages to 1st January 2020
     const messages = document.querySelectorAll('discord-message');
     messages.forEach(message => {
         message.setAttribute('timestamp', date.toLocaleDateString(undefined, options));
