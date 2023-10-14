@@ -3,6 +3,7 @@
 @import "variables.css";
 @import "buttons.css";
 @import "inputs.css";
+@import "notices.css";
 
 * {
     box-sizing: border-box;
