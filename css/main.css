@@ -3,6 +3,7 @@
 @import "buttons.css";
 @import "inputs.css";
 @import "notices.css";
+@import "hero.css";
 
 * {
     box-sizing: border-box;
